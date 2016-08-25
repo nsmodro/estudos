@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 
 public class TestaEntrada {
     public static void main(String[] args) throws IOException {
+    	//InputStream is = new FileInputStream("arquivo.txt");
         InputStream is = System.in;
         InputStreamReader isr = new InputStreamReader(is);
         BufferedReader br = new BufferedReader(isr);
@@ -16,8 +17,8 @@ public class TestaEntrada {
             System.out.println(linha);
             linha = br.readLine();
         }
-
-
+        
+        br.close();
     }
 }
 
