@@ -10,3 +10,15 @@ JAVASCRIPT
 >> em js não é necessário definir o tipo da variável (é implicito)
 >> typeof 'nomeVariável' mostra de que tipo ela é
 >> é possível mudar o tipo da variável depois dela criada atribuindo outro tipo (js é uma linguagem dinamicamente tipável)
+
+>> DOM - Document Object Model -- representação em forma de objs de uma página html
+>> 'pegar itens' de uma página html: 
+>>>> atribuir um id ex: <h1 id="titulo">Bom Dia</h1>
+>>>> no console do navegador (CTRL+Shift+J) 'var titulo = document.getElementById("titulo") >> titulo.textContent >> result: "Bom Dia"'
+>> id deve sempre ser unico na página html
+>> para atribuir um valor a um obj no html no titulo.textContent = "Novo Valor"
+>> criar obj em js: var variavelObj = {};
+>> objetos tem chave e valor ex: var vaiavelObj = {"chave" : valor, "chave2" : valor2} // pode sere usada as chaves sem aspas
+>> Dot Notation ex: vaiavelObj.valor //retorna valor 
+>> outra forma de recuperar info de um obj: vaiavelObj["valor"]
+>> DOM é a representação de uma página HTML e pode ser acessado através da variável document que representa a raiz de nossa página.
