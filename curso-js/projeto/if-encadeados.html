@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ifs Encadeados</title>
+</head>
+<body>
+
+<script >
+	//se o salário mensal for entre 0 e 1k --> 5%
+	//se não cair na condição anterior e < 2k --> 10%
+	//senão --> 15%
+
+	var salarioMensal = 1500;
+	if (salarioMensal > 0 && salarioMensal <= 1000) { //and = && or = ||
+			var bonus = salarioMensal * 0.05;
+			var condicao = "salário entre 0 e 1K";
+	} else if (salarioMensal <= 2000) {
+		var bonus = salarioMensal * 0.1;
+		var condicao = "salário menor que 2K";
+	} else {
+		var bonus = salarioMensal * 0.15;
+		var condicao = "elseeee";
+	}
+
+	console.log(bonus);
+	console.log(condicao);
+	
+</script>
+
+</body>
+</html>
