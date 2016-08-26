@@ -1,0 +1,12 @@
+JAVASCRIPT
+
+É UMA LINGUAGEM DE PROGRAMAÇÃO BASEADA EM SCRIPT E É SUPIORTADA POR VÁRIAS PLATAFORMAS. COM NOODE JS É POSSIVEL RODAR JAVASCRIPT NO LADO DO SERVIDOR.
+---editor texto sublime text 3
+
+>> alert() é blocante
+>> js é interpretado linha a linha
+>> CTRL + Shift + J abre o console do navegador de desenvolvedor
+>> O Javascript é o nome de uma implementação do padrão ECMA 262, isto é, quando dizemos que programamos em Javascript, na verdade programamos em ECMASCRIPT. Este padrão historicamente foi criado para resolver os problemas de compatibilidade da linguagem entre navegadores.
+>> em js não é necessário definir o tipo da variável (é implicito)
+>> typeof 'nomeVariável' mostra de que tipo ela é
+>> é possível mudar o tipo da variável depois dela criada atribuindo outro tipo (js é uma linguagem dinamicamente tipável)

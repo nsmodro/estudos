@@ -1,0 +1,100 @@
+GIT
+>>git cherry-pick (mais hash do commit) para escolher qual commit quero levar para head 
+>>ferramenta git cola -  digita no terminal git-cola
+
+A IDE ECLIPSE
+>>Ctrl + F11 roda a última classe que você rodou. É o mesmo que clicar no ícone verde que parece um botão de play na barra de ferramentas.
+>>Ctrl + PgUp e Ctrl + PgDown Navega nas abas abertas. Útil quando estiver editando vários arquivos ao mesmo tempo.
+>>Ctrl + Shift + F Formata o código segundo as convenções do Java
+>>Ctrl + M Expande a View atual para a tela toda (mesmo efeito de dar dois cliques no título da View)
+>>Ctrl + Shift + L Exibe todos os atalhos possíveis.
+>>Ctrl + O Exibe um outline para rápida navegação
+>>Alt + Shift + X e depois J Roda o main da classe atual. Péssimo para pressionar! Mais fácil você digitar Control+3 e depois digitar ::Run::!. Abuse desde já do Control+3
+
+CLASSES ABSTRATAS
+>> Uma classe abstrata não pode ser instanciada.
+
+INTERFACES
+>> posso pedir uma interface por parametro: tenho a interface Autentica e as classes Cliete e Gerente implemetam ela. Na classe de InteligenciaSistema no metodo de autenticar(Autentica f) posso pedir como parametro a interface que significa que posso receber tanto cliente quanto gerente que implementa ela.
+ex: class SistemaInterno {    
+
+  void login(Autenticavel a) {
+    // não importa se ele é um gerente ou diretor
+    // será que é um fornecedor?
+    // Eu, o programador do SistemaInterno, não me preocupo
+    // Invocarei o método autentica
+  }
+
+}
+
+TRATAMENTO DE EXCESSÕES
+>> try/catch trata onde ocorre
+>> throws passa para frente (quem chamou onde ocorreu erro)
+
+PACOTES
+>>Acesso aos atributos, construtores e métodos.
+ Os modificadores de acesso existentes em Java são quatro;
+>>>public - Todos podem acessar aquilo que for definido como public. 
+	Classes, atributos, construtores e métodos podem ser public.
+>>>protected - Aquilo que é protected pode ser acessado por todas as classes do mesmo pacote e por todas as classes que o estendam, mesmo que essas não estejam no mesmo pacote. 
+	Somente atributos, construtores e métodos podem ser protected.
+>>>padrão (sem nenhum modificador) - Se nenhum modificador for utilizado, o modificador de acesso package-private é utilizado implicitamente. 
+	Com isso, todas as classes do mesmo pacote têm acesso ao atributo, construtor, método ou classe.
+>>>private - A única classe capaz de acessar os atributos, construtores e métodos privados é a própria classe. 
+	Classes, como conhecemos, não podem ser private, mas atributos, construtores e métodos sim.
+
+	Classes públicas Para melhor organizar seu código, o Java não permite mais de uma classe pública por arquivo e o arquivo deve ser NomeDaClasse.java.
+	Uma vez que outros programadores irão utilizar essa classe, quando precisarem olhar o código da mesma, fica mais fácil encontrá-la sabendo que ela está no arquivo de mesmo nome.
+
+Classes aninhadas podem ser protected ou private.
+
+JAVA LANG
+>> Variáveis do tipo String são imutáveis
+
+
+THREADS
+>> posso usar uma THREAD com objetos que implementam a interface Runnable. Para a thread ser segura também é preciso usar o synchronized que garante que uma thread só ira acessar um obj depois que a ultima já acessou e 'terminou o serviço' (synchronized trava o acesso)
+
+COLLECTIONS FRAMEWORK	
+>>List armazena objetos na ordem de inserção
+>>Set não permite itens duplicados
+>>Map chaves unicas
+-a.equals(b) implica a.hashCode() == b.hashCode()
+-reverse(List<?> list) - Inverte a ordem dos elementos em uma lista específica.
+-rotate(List<?> list, int distance) - Rotaciona os elementos de uma lista específica a uma distância específica.
+-shuffle(List<?> list) - Troca aleatoriamente a lista específica usando um código padrão de aleatoriedade.
+-No caso das listas (ArrayList e LinkedList), a inserção é bem rápida e a busca muito lenta!
+-No caso dos conjuntos (TreeSet e HashSet), a inserção ainda é rápida, embora um pouco mais lenta do que a das listas. E a busca é muito rápida!
+		@Override
+        public int hashCode() {
+            final int prime = 31;
+            int result = 1;
+            result = prime * result + numero;
+            return result;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj)
+                return true;
+            if (obj == null)
+                return false;
+            if (getClass() != obj.getClass())
+                return false;
+            Conta other = (Conta) obj;
+            if (numero != other.numero)
+                return false;
+            return true;
+        }
+
+MAVEN
+>>Baixar a versão mais recente	
+>>no diretório descompactado ex: C:\Aplicacoes\maven v 1.1\bin pode acessar o maven pelo mvn (mvn --help)
+>>adiciona o maven no Path
+>>Gerar novo 'projeto': mvn archetype:generate -DartifactId=produtos -DgroupId=br.com.alura.maven -DinteractiveMode=false -DarchetypeArtifactId=maven-archetype-quickstart
+>>>> onde artifactId é nome projeto e groupId é o pacote do projeto e interactiveMode fala se o resto das configurações é default ou não e archetypeArtifactId é o projeto modelo que o maven vai pegar para fazer igual (há projetos exempls de spring, hibernate etc)
+>>para compilar: mvn compile
+>>para testar: mvn test
+>>para limpar diretório target: mvn clean
+>>gerar relatório de testes: mvn surefire-report:report >> surefire não é um plugin nativo do maven por isso a chamada é diferente
+>>maven criar um jar: mvn package
