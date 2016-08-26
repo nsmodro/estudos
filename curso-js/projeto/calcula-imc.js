@@ -1,5 +1,51 @@
 //imc = peso/(altura*altura)
 
+
+var trsPacientes = document.getElementsByClassName("paciente"); //array de trs
+
+percorreArray(trsPacientes, function(trPaciente) {
+	
+	var tdNome = trPaciente.getElementsByClassName("info-nome")[0];
+	var tdPeso = trPaciente.getElementsByClassName("info-peso")[0];
+	var tdAltura = trPaciente.getElementsByClassName("info-altura")[0];
+
+	//var pacienteAtual = {nome : tdNome.textContent, peso : tdPeso.textContent, altura: tdAltura.textContent, pegaImc : calculaIMC}; // fazendo a função ser do Paciente
+	var pacienteAtual = {nome : tdNome.textContent, 
+						peso : tdPeso.textContent, 
+						altura: tdAltura.textContent, 
+						pegaImc : function() {
+							if (this.altura > 0) {
+								var imc = this.peso/(this.altura*this.altura);
+								return imc;
+							} else console.log("altura tem que ser positiva e diferente de zero");
+						}}; // Função anonima que não está no escopo global
+
+	//calculaIMC(pacienteAtual);
+
+	var tdImc = trPaciente.getElementsByClassName("info-imc")[0];
+	tdImc.textContent = pacienteAtual.pegaImc();
+});
+
+
+/* *********** duas formas de função só que ainda é global
+function calculaIMC() {
+	if (this.altura > 0) {
+		var imc = this.peso/(this.altura*this.altura);
+		return imc;
+		
+	} else console.log("altura tem que ser positiva e diferente de zero");
+}
+
+
+function calculaIMC(paciente) {
+	if (paciente.altura > 0) {
+		var imc = paciente.peso/(paciente.altura*paciente.altura);
+		return imc;
+		
+	} else console.log("altura tem que ser positiva e diferente de zero");
+}
+
+
 var trsPacientes = document.getElementsByClassName("paciente"); //array de trs
 
 
@@ -9,15 +55,23 @@ for (var i = 0; i < trsPacientes.length; i++){
 	var tdPeso = trPaciente.getElementsByClassName("info-peso")[0];
 	var tdAltura = trPaciente.getElementsByClassName("info-altura")[0];
 
-	var paciente = {nome : tdNome.textContent, peso : tdPeso.textContent, altura: tdAltura.textContent};
+	//var pacienteAtual = {nome : tdNome.textContent, peso : tdPeso.textContent, altura: tdAltura.textContent, pegaImc : calculaIMC}; // fazendo a função ser do Paciente
+	var pacienteAtual = {nome : tdNome.textContent, 
+						peso : tdPeso.textContent, 
+						altura: tdAltura.textContent, 
+						pegaImc : function() {
+							if (this.altura > 0) {
+								var imc = this.peso/(this.altura*this.altura);
+								return imc;
+							} else console.log("altura tem que ser positiva e diferente de zero");
+						}}; // Função anonima que não está no escopo global
 
-	if (paciente.altura > 0) {
-		var imc = paciente.peso/(paciente.altura*paciente.altura);
-		var tdImc = trPaciente.getElementsByClassName("info-imc")[0];
-		tdImc.textContent = imc;
-		
-	} else console.log("altura tem que ser positiva e diferente de zero");
+	//calculaIMC(pacienteAtual);
+
+	var tdImc = trPaciente.getElementsByClassName("info-imc")[0];
+	tdImc.textContent = pacienteAtual.pegaImc();
 }
+*/
 
 
 /* **************** while
