@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Introdução ao jQuery</title>
+</head>
+<body>
+<script src="jquery.js"></script>
+
+	<h1>Treinamentos</h1>
+
+	<ul id="lista">
+		<li>Lógica de Programação</li>
+		<li>Web - HTML e CSS</li>
+		<li>BD e SQL</li>
+		<li>NodeJS</li>
+	</ul>
+
+	<label>Novo treinamento:</label>
+	<input id="treinamento">
+	<input id="botao-adiciona" type="button" value="adicionar">
+
+<script>
+	$('#lista').on("click", "li", function() {
+		var texto = $(this).text();
+		alert(texto);
+	});
+
+	$('#botao-adiciona').click(function() {
+		var texto = $('#treinamento').val();
+		$('<li>').text(texto).appendTo('#lista');
+	});
+</script>
+
+</body>
+</html>
