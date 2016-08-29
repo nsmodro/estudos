@@ -1,17 +1,24 @@
-//imc = peso/(altura*altura)
+function calculaTodosImcs() {
+	var trsPacientes = document.getElementsByClassName("paciente");
 
-var trsPacientes = document.getElementsByClassName("paciente");
+	percorreArray(trsPacientes, imprimeEModificaTdDeImc);
 
-percorreArray(trsPacientes, imprimeEModificaTdDeImc);
+	function imprimeEModificaTdDeImc(trPaciente){
 
-function imprimeEModificaTdDeImc(trPaciente){
+	    var pacienteAtual = montaPaciente(trPaciente);    
+	    var imc = pacienteAtual.pegaImc();
 
-    var pacienteAtual = montaPaciente(trPaciente);    
-    var imc = pacienteAtual.pegaImc();
-
-    var tdImc = trPaciente.getElementsByClassName("info-imc")[0]; 
-    tdImc.textContent = imc;
+	    var tdImc = trPaciente.getElementsByClassName("info-imc")[0]; 
+	    tdImc.textContent = imc;
+	}
 }
+
+
+var botao = document.getElementById("calcula-imcs");
+//botao.onClick = calculaTodosImcs; dessa forma posso atribuir apenas um evento
+botao.addEventListener("click", calculaTodosImcs);
+
+//imc = peso/(altura*altura)
 
 
 /* ************* antes da função de monta paciente 
