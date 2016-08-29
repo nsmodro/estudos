@@ -9,7 +9,7 @@ function montaPaciente(pacienteTr){
         altura : tdAltura.textContent,
         pegaImc: function() {
 
-            if(this.altura != 0){
+            if(this.altura > 0){
                 var imc = this.peso / (this.altura * this.altura);
                 return imc;
             } else{

@@ -1,6 +1,20 @@
 //imc = peso/(altura*altura)
 
+var trsPacientes = document.getElementsByClassName("paciente");
 
+percorreArray(trsPacientes, imprimeEModificaTdDeImc);
+
+function imprimeEModificaTdDeImc(trPaciente){
+
+    var pacienteAtual = montaPaciente(trPaciente);    
+    var imc = pacienteAtual.pegaImc();
+
+    var tdImc = trPaciente.getElementsByClassName("info-imc")[0]; 
+    tdImc.textContent = imc;
+}
+
+
+/* ************* antes da função de monta paciente 
 var trsPacientes = document.getElementsByClassName("paciente"); //array de trs
 
 percorreArray(trsPacientes, function(trPaciente) {
@@ -25,6 +39,8 @@ percorreArray(trsPacientes, function(trPaciente) {
 	var tdImc = trPaciente.getElementsByClassName("info-imc")[0];
 	tdImc.textContent = pacienteAtual.pegaImc();
 });
+
+*/
 
 
 /* *********** duas formas de função só que ainda é global
