@@ -1,0 +1,5 @@
+jQUERY
+>> biblioteca 	
+>> alias jquery $
+>> Ajax 
+>> JSON (javascript object notation)

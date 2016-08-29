@@ -1,0 +1,21 @@
+HTTP
+>> web comunicação client <---> server (cliente servidor)
+>> protocolo HTTP (Hypertext Transfer Protocol)
+>> O HTTP é responsável por definir a forma com que os dados são trafegados na rede através de várias regras
+>> Quando usamos o HTTP (sem o s no final) todos os dados enviados entre cliente e servidor são transmitidos em texto puro, inclusive dados sensíveis como login e senha
+>>  com HTTPs a web se torna segura. Para enviar dados de maneira segura devemos utilizar uma chave pública, e o servidor usa em troca uma chave privada. A chave pública está embutida dentro de um certificado, a chave privada fica visível apenas no lado do servidor. O certificado que possui a chave pública, confirma a identidade de um site ou aplicação, possui o endereço do site e a validade. O certificado é emitido por uma autoridade certificadora que o navegador confia.
+>> Usando HTTPS é meramente uma configuração do servidor
+>> protocolo://dominio:porta/caminho/recurso
+>> URL são os endereços da Web
+>> Uma URL é uma URI mas não todas as URI's são URL's! Existem URI's que identificam um recurso sem definir o endereço, nem o protocolo. Em outros palavras, uma URL representa um identificação de um recurso (URI) através do endereço, mas não todas as identificações são URL's.
+>> o protocolo HTTP segue o modelo Requisição-Resposta
+>> sempre o cliente inicia a comunicação
+>> uma requisição precisa ter todas as informações para o servidor gerar a resposta
+>> HTTP é stateless, não mantém informações entre requisições
+>> As plataformas de desenvolvimento usam sessões para guardar informações entre requisições
+>> para declarar um parâmetro da requisição usamos ? após do recurso
+>> vários parâmetros são separados pelo &
+>> params são utilizados para definir detalhes da pesquisa ou enviar dados de um formulário
+>> params no GET fazem parte da URL
+>> existem outros métodos HTTP como POST, DELETE e PUT
+>> params no POST fazem parte do corpo da requisição
