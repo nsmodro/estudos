@@ -7,13 +7,17 @@
 <body>
 	<h1>Hello World jQuery</h1>
 	<label>Digite seu nome: </label>
-	<input/>
-	<input type="button" value="copiar">
+	<input id="campo-nome" />
+	<input id="botao-copiar" type="button" value="copiar">
 	<h2 id="texto-copiado"></h2>
 
 <script src="jquery.js"></script>
 <script>
-	$('#texto-copiado').text('Blá');
+	$('#botao-copiar').click(function(){
+		//$('#texto-copiado').text('Blá');
+		var nome = $('#campo-nome').val();
+		$('#texto-copiado').text(nome);
+	});
 </script>
 </body>
 </html>
