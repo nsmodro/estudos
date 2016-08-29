@@ -9,6 +9,8 @@
 
 	<h1>Treinamentos</h1>
 
+	<input id="botao-atualiza" type="button" value="Atualizar">
+
 	<ul id="lista">
 		<li>Lógica de Programação</li>
 		<li>Web - HTML e CSS</li>
@@ -41,6 +43,19 @@
 		var texto = $('#treinamento').val();
 		//$('<li>').text(texto).css('color', 'pink').css('background', 'grey').appendTo('#lista');
 		$('<li>').text(texto).css({'color' : 'pink', 'background' : 'grey'}).appendTo('#lista');
+	});
+
+	$('#botao-atualiza').click(function() {
+		$.ajax({ 
+			url: 'file:///C:/estudos/curso-jquery/add-elementos-dinamicamente.html',
+			dataType: 'jsonp',
+			sucess: function(retorno) {
+				$.each(retorno.treinamentos, function() {
+					var treinamento = this;
+					alert(treinamento.nome);
+				});
+			}
+		});
 	});
 
 
